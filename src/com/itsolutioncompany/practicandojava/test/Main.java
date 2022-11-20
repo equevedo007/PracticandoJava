@@ -14,6 +14,8 @@ public class Main {
 
         ClientepropuestosnaturalBean objClientepropuestosnaturalBean = new ClientepropuestosnaturalBean();
 
+        System.out.println(servicio.ListaClientePropuestosNatural().size());
+
         for ( ClientepropuestosnaturalBean cliente :servicio.ListaClientePropuestosNatural()) {
             System.out.println(cliente.getNombrescompleto02());
 

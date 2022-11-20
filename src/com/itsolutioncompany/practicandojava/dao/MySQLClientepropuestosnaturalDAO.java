@@ -45,6 +45,7 @@ public class MySQLClientepropuestosnaturalDAO implements Clientepropuestosnatura
                 rs.close();
                 cs.close();
                 cn.close();
+                System.out.println("Se Cerro  Conexion  exitosa en : ListaClientePropuestosNaturalDNI");
             }catch (SQLException e){
                 System.out.println("Error En Cerrar Conexion : ListaClientePropuestosNaturalDNI");
             }
@@ -78,6 +79,7 @@ public class MySQLClientepropuestosnaturalDAO implements Clientepropuestosnatura
                 rs.close();
                 cs.close();
                 cn.close();
+                System.out.println("Se Cerro  Conexion  exitosa en : ListaClientePropuestosNatural");
             }catch (SQLException e){
                 System.out.println("Error En Cerrar Conexion : ListaClientePropuestosNatural");
             }
