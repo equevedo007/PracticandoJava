@@ -7,4 +7,6 @@ import java.util.List;
 public interface ClientepropuestosnaturalDAO {
 
     public abstract List<ClientepropuestosnaturalBean> ListaClientePropuestosNaturalDNI(String DNI);
+    public abstract List<ClientepropuestosnaturalBean> ListaClientePropuestosNatural();
+
 }

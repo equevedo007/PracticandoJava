@@ -33,7 +33,7 @@ public class MySQLClientepropuestosnaturalDAO implements Clientepropuestosnatura
             rs=cs.executeQuery();
             while (rs.next()){
                 objClientepropuestosnaturalBean = new ClientepropuestosnaturalBean(rs.getInt(1), rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),
-                        rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9));
+                        rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13));
                 ListaClientePropuestosNaturalDNI.add(objClientepropuestosnaturalBean);
             }
 
@@ -47,6 +47,39 @@ public class MySQLClientepropuestosnaturalDAO implements Clientepropuestosnatura
                 cn.close();
             }catch (SQLException e){
                 System.out.println("Error En Cerrar Conexion : ListaClientePropuestosNaturalDNI");
+            }
+        }
+
+
+        return ListaClientePropuestosNaturalDNI;
+    }
+
+    @Override
+    public List<ClientepropuestosnaturalBean> ListaClientePropuestosNatural() {
+        ListaClientePropuestosNaturalDNI = new ArrayList<ClientepropuestosnaturalBean>();
+
+        try {
+            ConexionBD  cnx = new ConexionBD();
+            cn=cnx.getConeccionBD();
+            String sql ="{call sp_ListaClientePropuestosNatural()}";
+            cs=cn.prepareCall(sql);
+            rs=cs.executeQuery();
+            while (rs.next()){
+                objClientepropuestosnaturalBean = new ClientepropuestosnaturalBean(rs.getInt(1), rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),
+                        rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13));
+                ListaClientePropuestosNaturalDNI.add(objClientepropuestosnaturalBean);
+            }
+
+        }catch (Exception e){
+            System.out.println("Error En Metodo : ListaClientePropuestosNatural : "+e.getMessage());
+
+        }finally {
+            try {
+                rs.close();
+                cs.close();
+                cn.close();
+            }catch (SQLException e){
+                System.out.println("Error En Cerrar Conexion : ListaClientePropuestosNatural");
             }
         }
 

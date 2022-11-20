@@ -1,5 +1,6 @@
 package com.itsolutioncompany.practicandojava.test;
 
+import com.itsolutioncompany.practicandojava.beans.ClientepropuestosnaturalBean;
 import com.itsolutioncompany.practicandojava.servicio.ServicioClientepropuestosnatural;
 import com.itsolutioncompany.practicandojava.utils.ConexionBD;
 
@@ -11,7 +12,12 @@ public class Main {
 
         ServicioClientepropuestosnatural servicio = new ServicioClientepropuestosnatural();
 
-        System.out.println("Total de Lista es : " +servicio.ListaClientePropuestosNaturalDNI("43532434").size());
+        ClientepropuestosnaturalBean objClientepropuestosnaturalBean = new ClientepropuestosnaturalBean();
+
+        for ( ClientepropuestosnaturalBean cliente :servicio.ListaClientePropuestosNatural()) {
+            System.out.println(cliente.getNombrescompleto02());
+
+        }
 
     }
 }

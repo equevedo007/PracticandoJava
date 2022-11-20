@@ -19,4 +19,11 @@ public class ServicioClientepropuestosnatural {
 
     }
 
+    public List<ClientepropuestosnaturalBean> ListaClientePropuestosNatural(){
+        List<ClientepropuestosnaturalBean> lista=null;
+        lista=objClientepropuestosnaturalDAO.ListaClientePropuestosNatural();
+        return lista;
+
+    }
+
 }
